@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Advent Pro", sans-serif;
+}
+
+body {
+  /* background-repeat: no-repeat; */
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+}
+
+main {
+  background: url(./assets/image.png) lightgray 50% / cover no-repeat;
+  height: 100vh;
+  font-weight: 500;
+}
+
+.desactivado {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding-top: 50px;
+}
+
+header img {
+  width: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form h1 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: normal;
+  margin-block: 20px 20px;
+}
+
+.registrate {
+  margin: 0px;
+  margin: auto;
+
+  display: inline;
+  width: 350px;
+  text-align: center;
+  margin-block: 5px 80px;
+  font-size: 20px;
+  opacity: 0.9;
+
+}
+
+form div {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+form div input[type="password"] {
+  color: black;
+  height: 45px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+  margin-block: 2px 40px;
+  font-size: 18px;
+  border: 1px solid #cad3dc;
+  transition: border ease-in 0.12s, box-shadow ease-in 0.12s;
+}
+
+form div input[type="text"] {
+    color: black;
+    height: 45px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    margin-block: 2px 40px;
+    font-size: 18px;
+    border: 1px solid #cad3dc;
+    transition: border ease-in 0.12s, box-shadow ease-in 0.12s;
+  }
+
+form div input[type="password"]:focus {
+  outline: none;
+  border-color: #61d4d5;
+  box-shadow: 0 0 8px #61d3d582;
+}
+
+form div input[type="text"]:focus {
+    outline: none;
+    border-color: #61d4d5;
+    box-shadow: 0 0 8px #61d3d582;
+  }
+
+form div label {
+  align-self: flex-start;
+}
+
+form div input[type="submit"] {
+  padding: 10px 30px;
+  background-color: #e31b4d;
+  box-shadow: 1px 1px 9px #e31b4db0;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1rem;
+}
+
+form+span {
+  display: inline-block;
+  width: 100%;
+  margin-block: 40px;
+  text-align: center;
+}
+
+main form+span a {
+  display: block;
+  color: #61d4d5;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+footer {
+  background-color: #410d08;
+  padding-bottom: 30px;
+}
+
+footer section{
+  margin-left: 5%;
+}
+
+footer h2 {
+  margin-bottom: 14px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+footer ul {
+  padding: 25px;
+
+}
+
+footer ul li {
+  line-height: 150%;
+  font-size: 1.2rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+hr {
+  opacity: .1;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-top: 30px;
+}
+
+footer span {
+  display: flex;
+  align-items: center;
+}
+
+.fLogo {
+  max-width: 150px;
+}
+
+footer .img1,
+footer .img2 {
+  margin-inline: 3px;
+  transform: scale(1.2);
+}
+
+@media (min-width: 750px) {
+  .desactivado {
+    display: block;
+  }
+
+  header {
+    padding-top: 40px;
+  }
+
+  main {
+    background: url(./assets/background.jpg) lightgray 50% / cover no-repeat;
+  }
+
+  form h1 {
+    text-align: center;
+    font-size: 92px;
+    margin-block: 40px 0px;
+  }
+
+  
+
+  .registrate a {
+    color: #61d4d5;
+    text-decoration: underline;
+
+  }
+
+  form div input[type="password"] {
+    width: 350px;
+    height: 50px;
+    margin-block: 2px 25px;
+    font-size: 18px;
+    border: 1px solid #cad3dc;
+  }
+
+  form div input[type="text"] {
+    width: 350px;
+    height: 50px;
+    margin-block: 2px 25px;
+    font-size: 18px;
+    border: 1px solid #cad3dc;
+  }
+
+  form div label {
+    opacity: 0.9;
+    margin-bottom: 3px;
+
+  }
+
+  form div input[type="submit"] {
+    padding: 10px 45px;
+    margin-top: 35px;
+
+  }
+
+  form+span {
+    display: none;
+  }
+  
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  footer section{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  footer ul:last-of-type {
+    margin: 0;
+    padding: 25px;
+  }
+  
+  footer ul li {
+    line-height: 150%;
+    font-size: 1.2rem;
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  hr {
+    opacity: .1;
+  }
+  
+  footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin-top: 30px;
+  }
+  
+  footer span {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fLogo {
+    max-width: 150px;
+  }
+  
+  footer .img1,
+  footer .img2 {
+    margin-inline: 3px;
+    transform: scale(1.2);
+  }
+
+}

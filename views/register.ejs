@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daran Hub</title>
+    <link rel="icon" type="image/png" href="iconpagina.png">
+    <link rel="stylesheet" href="register.css?version=<%= Math.random() %>">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="./assets/logo-white.png" alt="logo" />
+      </header>
+      <form action="/register" method="POST">
+        <h1 id="h1">Bienvenido</h1>
+        <p class="registrate ">ingresa el nombre por el cual se te reconocera y un codigo de acceso que solo tu conozcas.</p>
+        <div>
+          <label for="name">Nombre Visible</label>
+          <input id="name" type="text" name="name"/>
+          <label for="accescode">Codigo de acceso</label>
+          <input id="accescode" type="password" name="accesscode"/>
+          <input type="submit" value="Registrarse">
+        </div>
+      </form>
+      <p class="registrate" style="text-align: center; display: block; margin-top: 70px;"> O prefieres <a href="/login">Iniciar Sesion?</a> </p>
+
+		 <% if (error) { %>
+      <%= error %>
+        <% } %>
+	</main>
+    <footer>
+      <section>
+        <ul>
+          <h2>Características</h2>
+          <li>Seguridad</li>
+          <li>Velocidad</li>
+          <li>Encriptación</li>
+        </ul>
+        <ul>
+          <h2>Legal</h2>
+          <li>Politica de privacidad</li>
+          <li>Cookies</li>
+          <li>Digital Art</li>
+        </ul>
+      </section>
+      <hr />
+      <div>
+        <img class="fLogo" src="./assets/logo-black.png" alt="" />
+        <span>
+          <img class="img1" src="./assets/world.png" alt="" />
+          <img class="img2" src="./assets/amongo.png" alt="" />
+          <img class="img1" src="./assets/discord.png" alt="" />
+        </span>
+      </div>
+    </footer>
+    <script src="register.js?version=<%= Math.random() %>" type="text/javascript"></script>
+  </body>
+</html>

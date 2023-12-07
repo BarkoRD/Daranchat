@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daran Hub</title>
+    <link rel="icon" type="image/png" href="iconpagina.png">
+    <link rel="stylesheet" href="login.css?version=<%= Math.random() %>">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="./assets/logo-white.png" alt="logo" />
+      </header>
+      <form action="/login" method="post">
+        <h1 id="h1">Ingresa tu codigo<br>de acceso</h1>
+        <p class="registrate desactivado">Aun no tienes un codigo de acceso? <a href="/register">Registrate!</a></p>
+        <div>
+          <label for="accescode">Codigo de acceso</label>
+          <input id="accescode" type="password" name="accesscode"/>
+          <input type="submit" value="Iniciar Sesion">
+        </div>
+      </form>
+      <span><p>No tienes un codigo?<a href="/register">crea el tuyo!</a></p></span>
+    </main>
+    <footer>
+      <section>
+        <ul>
+          <h2>Características</h2>
+          <li>Seguridad</li>
+          <li>Velocidad</li>
+          <li>Encriptación</li>
+        </ul>
+        <ul>
+          <h2>Legal</h2>
+          <li>Politica de privacidad</li>
+          <li>Cookies</li>
+          <li>Digital Art</li>
+        </ul>
+      </section>
+      <hr />
+      <div>
+        <img class="fLogo" src="./assets/logo-black.png" alt="" />
+        <span>
+          <img class="img1" src="./assets/world.png" alt="" />
+          <img class="img2" src="./assets/amongo.png" alt="" />
+          <img class="img1" src="./assets/discord.png" alt="" />
+        </span>
+      </div>
+    </footer>
+    <script src="login.js?version=<%= Math.random() %>" type="text/javascript"></script>
+  </body>
+</html>
