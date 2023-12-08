@@ -15,7 +15,6 @@ Implemented a hover effect on chat photos to indicate that they are clickable. E
 Fixed a bug that prevented users from recording more than one audio.
 
 
-
 > *Pending Features for Future Versions:*
 
 *Ensure users cannot set a password previously used by another user when changing their passwords. This involves implementing similar checks as in the registration section.*
@@ -29,6 +28,8 @@ Fixed a bug that prevented users from recording more than one audio.
 
 *Drag & Drop Functionality*
 *Planned addition of drag and drop functionality for an intuitive way to share files.*
+
+---
 
 > **Thank you for using DaranChat! Your feedback is valuable, and we're committed to enhancing your chat experience.**
 
