@@ -11,7 +11,8 @@ The application now features autoscroll when sending messages. Enjoy a smoother 
 **Scroll Down Button:**
 
 We've added a handy button that allows you to effortlessly scroll down through the conversation. Quickly navigate through old messages and access the information you need efficiently!
-**Bug Fixes:**
+
+### Bug Fixes:
 
 Minor bugs have been fixed, enhancing the overall stability of the application.
 
