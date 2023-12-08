@@ -131,23 +131,37 @@ const formnewpass = document.getElementById('newPasswordRequest')
 
 formnewpass.addEventListener('submit', async (e) => {
   e.preventDefault()
-  if (confirm('Seras deslogueado desea continuar?')) {
-    const formData = new FormData(formnewpass);
-    console.log(formData)
-    let newpass = formData.get('newpass')
 
-    // let oldpass = formData.get('oldpass')
-    const data = {
-      newpass,
-      // oldpass,
-      id: localStorage.getItem("userid")
-    }
-    socket.emit('changepass', data)
-    window.location.href = "/logout";
+  const formData = new FormData(formnewpass);
+  let newpass = formData.get('newpass')
+
+  // let oldpass = formData.get('oldpass')
+  const data = {
+    newpass,
+    // oldpass,
+    id: localStorage.getItem("userid")
   }
-
+  socket.emit('changepasstry', data)
+  // socket.once('server:logout', (itwork) => {
+  //   if (itwork) {
+  //       if (confirm('Seras deslogueado desea continuar?')) {
+  //         socket.emit('changepass', data)
+  //         data.newpass = ''
+  //         window.location.href = "/logout";
+  //       }
+  //   } else {
+  //      alert('Por favor intente una contraseña diferente')
+  //   }
+  // })
+})
+socket.on('server:err', () => {
+  alert('Por favor intente una contraseña diferente')
 })
 
+socket.on('server:logout', () => {
+  if (confirm('Seras deslogueado desea continuar?')) 
+    window.location.href = "/logout";
+})
 const formnewname = document.getElementById("newNameRequest")
 formnewname.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -291,7 +305,7 @@ const appendMessage = (message) => {
         div.append(owner);
       }
       div.append(messagediv);
-      
+
     } else {
 
       div.classList.add("right");
@@ -365,7 +379,7 @@ const appendFile = (file) => {
       div.classList.add("left");
       const owner = document.createElement("p");
       const messagediv = downloadrar(blobfile);
-      messagediv.setAttribute("id","filecontent")
+      messagediv.setAttribute("id", "filecontent")
       owner.classList.add("owner");
       messagediv.classList.add("content");
       owner.innerHTML = file.owner;
@@ -393,7 +407,7 @@ const appendFile = (file) => {
       div.classList.add("right");
       const owner = document.createElement("p");
       const messagediv = downloadrar(blobfile);
-      messagediv.setAttribute("id","filecontent")
+      messagediv.setAttribute("id", "filecontent")
       owner.classList.add("owner");
       messagediv.classList.add("content");
       owner.innerHTML = file.owner;
@@ -401,7 +415,7 @@ const appendFile = (file) => {
       owner.style.color = "var(--namecolors)";
       messagediv.style.backgroundColor = "var(--bgRight)";
       messagediv.style.color = "var(--msgRight)";
-     
+
       const svg = document.createElement("svg");
       svg.setAttribute("viewBox", "0 0 384 512");
 
