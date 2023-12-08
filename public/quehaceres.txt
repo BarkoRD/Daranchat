@@ -10,10 +10,10 @@
 11. hover a las fotos en el chat para que se note que son clickeables LISTOUSKI
 12. organizar archivos LISTOUSKI
 14. arreglar que se puedan pegar fotos copiadas de google LISTOUSKI
+10. Que no se puedan poner una contraseña de otro usuario LISTOUSKI
 
 
 
-10. Que no se puedan poner una contraseña de otro usuario cuando cambien sus contraseñas para hacer eso debo hacer lo mismo quehice en la seccion de register. gracias
 12. autoscroll al mandar mensajes
 13. agregar boton para bajar
 
