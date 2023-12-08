@@ -239,13 +239,6 @@ body {
     border: 2px solid #e600bc;
 }
 
-.template_container .imgcontainer {
-    /* padding: 5px; */
-    /* padding-left: 15px;  */
-    /* width: 50%; */
-    /* display: inline-block; */
-}
-
 .template_container .imgcontainer img {
     height: 100px;
 }
@@ -883,6 +876,8 @@ body {
 
 .right .photostyle .photo-container .photonote:hover {
     opacity: 0.8;
+
+    cursor: pointer;
 
 }
 

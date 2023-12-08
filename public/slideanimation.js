@@ -1,9 +1,18 @@
-const sendPhoto = (photo, owner, id) => {
-  socket.emit('client:newphoto', {
-    photo,
-    owner,
-    id
-  })
+const sendPhoto = (photo, owner, id, photosrc) => {
+  if (photosrc) {
+    socket.emit('client:newphoto', {
+      photosrc,
+      owner,
+      id
+    })
+  } else {
+    socket.emit('client:newphoto', {
+      photo,
+      owner,
+      id
+    })
+  }
+
 }
 
 
@@ -173,29 +182,21 @@ newtextareaa.addEventListener('paste', (e) => {
   console.log(firstelement)
 
   if (firstelement.kind === 'string' && firstelement.type === 'text/html') {
-    alert("Lamentablemente por el momento tendras que descargar la imagen luego decidir si copiar y pegar o subirla mediante el clip")
-    // firstelement.getAsString((htmlString) => {
+    firstelement.getAsString((htmlString) => {
 
-    //   const doc = new DOMParser().parseFromString(htmlString, 'text/html');
-    //   const imgSrc = doc.querySelector('img')?.src;
+      const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+      const imgSrc = doc.querySelector('img')?.src;
+      let userid = localStorage.getItem("userid");
+      //   console.log(imgSrc)
+      // fetch(imgSrc)
+      //   .then(response => response.blob())
+      //   .then(blob => {
 
-    //   console.log(imgSrc)
-    // fetch(imgSrc)
-    //   .then(response => response.blob())
-    //   .then(blob => {
-    //     // Ahora tienes un Blob que puedes manejar como un archivo
-    //     // Por ejemplo, puedes llamar a sendPhoto como lo haces con un archivo real
-    //     sendPhoto(blob, 'elpepe', userid);
-    //   })
-
-    //aqui debo emitir un evento con el src de la imagen y manejarlo de manera que cuando se vaya a subir al chat sea un img con el imgSrc en vez de el clasico formato de blobs que tengo
-    //aqui debo emitir un evento con el src de la imagen y manejarlo de manera que cuando se vaya a subir al chat sea un img con el imgSrc en vez de el clasico formato de blobs que tengo
-    //aqui debo emitir un evento con el src de la imagen y manejarlo de manera que cuando se vaya a subir al chat sea un img con el imgSrc en vez de el clasico formato de blobs que tengo
-    //aqui debo emitir un evento con el src de la imagen y manejarlo de manera que cuando se vaya a subir al chat sea un img con el imgSrc en vez de el clasico formato de blobs que tengo
-
-
+      sendPhoto(undefined, 'elpepe', userid, imgSrc);
+      // })
+    })
   } else if (firstelement.kind === 'file') {
-
+    console.log('entroalfifle')
     let userid = localStorage.getItem("userid");
 
     let image = firstelement.getAsFile()

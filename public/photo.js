@@ -37,6 +37,18 @@ capturePhotoButton.addEventListener('click', async (e) => {
 
 
 socket.on('server:newphoto', photo =>{
+  if(photo.photosrc){
+    const photoBox = document.createElement('img');
+  photoBox.classList.add('photonote');
+  photoBox.src = photo.photosrc;
+
+  // Crear un contenedor para la foto
+  const photoContainer = document.createElement('div');
+  photoContainer.classList.add('photo-container');
+  photoContainer.appendChild(photoBox);
+  appendPhoto(photoContainer,photo.owner,photo.id)
+
+  }else{
   // Convertir el blob de la foto en una URL de objeto
   const photoBlob = new Blob([photo.photo], { type: 'image/jpeg' });
    const photoURL = URL.createObjectURL(photoBlob);
@@ -50,9 +62,8 @@ socket.on('server:newphoto', photo =>{
   const photoContainer = document.createElement('div');
   photoContainer.classList.add('photo-container');
   photoContainer.appendChild(photoBox);
-
   appendPhoto(photoContainer,photo.owner,photo.id)
-
+}
 })
 
 const appendPhoto = (photo,owner,id) => {

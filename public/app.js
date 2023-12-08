@@ -134,25 +134,16 @@ formnewpass.addEventListener('submit', async (e) => {
 
   const formData = new FormData(formnewpass);
   let newpass = formData.get('newpass')
-
-  // let oldpass = formData.get('oldpass')
   const data = {
+
     newpass,
-    // oldpass,
+
     id: localStorage.getItem("userid")
+
   }
-  socket.emit('changepasstry', data)
-  // socket.once('server:logout', (itwork) => {
-  //   if (itwork) {
-  //       if (confirm('Seras deslogueado desea continuar?')) {
-  //         socket.emit('changepass', data)
-  //         data.newpass = ''
-  //         window.location.href = "/logout";
-  //       }
-  //   } else {
-  //      alert('Por favor intente una contraseña diferente')
-  //   }
-  // })
+
+  socket.emit('changepass', data)
+
 })
 socket.on('server:err', () => {
   alert('Por favor intente una contraseña diferente')
@@ -496,18 +487,31 @@ const loadMessages = (message) => {
 
       appendVideo(videoContainer, e.id, e.owner);
     } else if (e.type === "photo") {
-      const photoBlob = new Blob([e.photo], { type: "image/jpeg" });
-      const photoURL = URL.createObjectURL(photoBlob);
+      if (e.photosrc) {
+        const photoBox = document.createElement('img');
+        photoBox.classList.add('photonote');
+        photoBox.src = e.photosrc;
 
-      const photoBox = document.createElement("img");
-      photoBox.classList.add("photonote");
-      photoBox.src = photoURL;
+        // Crear un contenedor para la foto
+        const photoContainer = document.createElement('div');
+        photoContainer.classList.add('photo-container');
+        photoContainer.appendChild(photoBox);
+        appendPhoto(photoContainer, e.owner, e.id)
 
-      const photoContainer = document.createElement("div");
-      photoContainer.classList.add("photo-container");
-      photoContainer.appendChild(photoBox);
+      } else {
+        const photoBlob = new Blob([e.photo], { type: "image/jpeg" });
+        const photoURL = URL.createObjectURL(photoBlob);
 
-      appendPhoto(photoContainer, e.owner, e.id);
+        const photoBox = document.createElement("img");
+        photoBox.classList.add("photonote");
+        photoBox.src = photoURL;
+
+        const photoContainer = document.createElement("div");
+        photoContainer.classList.add("photo-container");
+        photoContainer.appendChild(photoBox);
+
+        appendPhoto(photoContainer, e.owner, e.id);
+      }
     } else if (e.type == "file") {
       appendFile(e)
     }

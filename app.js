@@ -1,9 +1,10 @@
 // const MySQLStore = require('express-mysql-session')(session);
+let pepe = console.log
 // const sessionStore = new MySQLStore(/* configuración de MySQLStore */);
 //?????????????????????????????????????????????????????????????????????????????????????
 
 const express = require('express')
-const { pool } = require('./database.js')
+const { pool, query } = require('./database.js')
 const app = express()
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
@@ -141,14 +142,15 @@ io.on('connection', async (socket) => {
     });
 
     socket.on('client:newphoto', photo => {
+
         let photoWithOwner = {
             photo: photo.photo,
             owner: sessionweb.name,
             id: photo.id,
-            type: 'photo'
+            type: 'photo',
+            photosrc: photo.photosrc
 
         }
-
         console.log(photoWithOwner)
         messages.push(photoWithOwner);
 
@@ -195,31 +197,21 @@ io.on('connection', async (socket) => {
 
     })
 
-    socket.on('changepasstry', async (data)=>{
+    socket.on('changepass', async (data)=>{
         const [pepe] = await pool.promise().query('SELECT * FROM chatters WHERE accesscode = ?', [data.newpass])
-        console.log(data)
-
         try{
             await pool.promise().query('UPDATE chatters SET accesscode = ? WHERE chatters.id = ?', [data.newpass, data.id])
             socket.emit('server:logout')
         } catch (e){
             socket.emit('server:err')
         }
-        // if(pepe.length){
-        //     socket.emit('server:logout', false)
-        //     console.log('ASJDJASDJASDJ')
-        // } else {
-        //     socket.emit('server:logout', true)
-        //     console.log('ASJDJASDJASDJ pero en minicula')
-        // }
     })
 
-    // socket.on('changepass', async (data)=>{
-    //     await pool.promise().query('UPDATE chatters SET accesscode = ? WHERE chatters.id = ?', [data.newpass, data.id])
-    // })
 
     socket.on('changename', async (data)=>{
-        await pool.promise().query('UPDATE chatters SET name = ? WHERE chatters.id = ?', [data.newname, data.id])
+        // pepe(data)
+        const [pepito] = await pool.promise().query('UPDATE chatters SET name = ? WHERE chatters.id = ?', [data.newname, data.id])
+        pepe(pepito)
         })
 })
 
@@ -267,6 +259,7 @@ app.post('/register', async (req, res) => {
         let error = 'Disculpe este codigo de acceso no esta disponible'
         res.render('register', { error: error })
     } else {
+       
         await pool.promise().query('INSERT INTO chatters SET ?', newdata)
         res.redirect('/login')
     }
