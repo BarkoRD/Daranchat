@@ -55,7 +55,6 @@ form div {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 form div input[type="password"] {
@@ -90,14 +89,14 @@ form div input[type="submit"] {
   font-size: 1.1rem;
 }
 
-form+span {
+form + span {
   display: inline-block;
   width: 100%;
   margin-block: 40px;
   text-align: center;
 }
 
-main form+span a {
+main form + span a {
   display: block;
   color: #61d4d5;
   text-decoration: underline;
@@ -109,7 +108,7 @@ footer {
   padding-bottom: 30px;
 }
 
-footer section{
+footer section {
   margin-left: 5%;
 }
 
@@ -121,7 +120,6 @@ footer h2 {
 
 footer ul {
   padding: 25px;
-
 }
 
 footer ul li {
@@ -132,7 +130,7 @@ footer ul li {
 }
 
 hr {
-  opacity: .1;
+  opacity: 0.1;
 }
 
 footer div {
@@ -182,13 +180,11 @@ footer .img2 {
     margin-block: 5px 80px;
     font-size: 20px;
     opacity: 0.9;
-
   }
 
   .registrate a {
     color: #61d4d5;
     text-decoration: underline;
-
   }
 
   form div input[type="password"] {
@@ -205,10 +201,9 @@ footer .img2 {
 
   form div input[type="password"] {
     padding: 10px 45px;
-
   }
 
-  form+span {
+  form + span {
     display: none;
   }
 
@@ -217,27 +212,27 @@ footer .img2 {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  footer section{
+  footer section {
     display: flex;
     justify-content: space-evenly;
   }
-  
+
   footer ul:last-of-type {
     margin: 0;
     padding: 25px;
   }
-  
+
   footer ul li {
     line-height: 150%;
     font-size: 1.2rem;
     list-style: none;
     cursor: pointer;
   }
-  
+
   hr {
-    opacity: .1;
+    opacity: 0.1;
   }
-  
+
   footer div {
     display: flex;
     flex-direction: column;
@@ -245,20 +240,19 @@ footer .img2 {
     row-gap: 10px;
     margin-top: 30px;
   }
-  
+
   footer span {
     display: flex;
     align-items: center;
   }
-  
+
   .fLogo {
     max-width: 150px;
   }
-  
+
   footer .img1,
   footer .img2 {
     margin-inline: 3px;
     transform: scale(1.2);
   }
-
 }

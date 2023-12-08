@@ -10,18 +10,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/assets/iconpagina.png">
-  <link rel="stylesheet" href="estilo.css?version=<%= Math.random() %>">
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/iconpagina.png">
+<link rel="stylesheet" href="estilo.css?version=<%= Math.random() %>">
 
 
-  <title>DaranChat</title>
+<title>DaranChat</title>
 </head>
 
 <body>
@@ -77,11 +74,17 @@
               <input id="change_bg" type="file" accept="image/*" hidden>
               <label class="label" for="change_bg">Create your own!</label>
               <svg class="destroybg" data-name="Design Convert" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <path d="M53 20H11a1 1 0 0 1-1-1v-2a5 5 0 0 1 5-5h34a5 5 0 0 1 5 5v2a1 1 0 0 1-1 1Z" fill="#ffffff" class=" fill-010101"></path>
-                <path d="M40 14H24a1 1 0 0 1-1-1v-1a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v1a1 1 0 0 1-1 1Zm-15-2h14a3 3 0 0 0-3-3h-8a3 3 0 0 0-3 3ZM39 50h-.17a1 1 0 0 1-.83-1.17L41 31a1 1 0 1 1 2 .33l-3 17.84a1 1 0 0 1-1 .83ZM25 50a1 1 0 0 1-1-.83l-3-17.89a1 1 0 1 1 2-.28l3 17.88a1 1 0 0 1-.83 1.12Z" fill="#ffffff" class="fill-010101"></path>
-                <path d="M41.58 57H22.42a5 5 0 0 1-4.94-4.23L13 24.15A1 1 0 0 1 14 23h36a1 1 0 0 1 1 1.15l-4.48 28.62A5 5 0 0 1 41.58 57ZM15.17 25l4.29 27.46a3 3 0 0 0 3 2.54h19.12a3 3 0 0 0 3-2.54L48.83 25Z" fill="#ffffff" class="fill-010101"></path>
-                <path d="M32 50a1 1 0 0 1-1-1V31a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1Z" fill="#ffffff" class="fill-010101"></path>
-            </svg>
+                <path d="M53 20H11a1 1 0 0 1-1-1v-2a5 5 0 0 1 5-5h34a5 5 0 0 1 5 5v2a1 1 0 0 1-1 1Z" fill="#ffffff"
+                  class=" fill-010101"></path>
+                <path
+                  d="M40 14H24a1 1 0 0 1-1-1v-1a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v1a1 1 0 0 1-1 1Zm-15-2h14a3 3 0 0 0-3-3h-8a3 3 0 0 0-3 3ZM39 50h-.17a1 1 0 0 1-.83-1.17L41 31a1 1 0 1 1 2 .33l-3 17.84a1 1 0 0 1-1 .83ZM25 50a1 1 0 0 1-1-.83l-3-17.89a1 1 0 1 1 2-.28l3 17.88a1 1 0 0 1-.83 1.12Z"
+                  fill="#ffffff" class="fill-010101"></path>
+                <path
+                  d="M41.58 57H22.42a5 5 0 0 1-4.94-4.23L13 24.15A1 1 0 0 1 14 23h36a1 1 0 0 1 1 1.15l-4.48 28.62A5 5 0 0 1 41.58 57ZM15.17 25l4.29 27.46a3 3 0 0 0 3 2.54h19.12a3 3 0 0 0 3-2.54L48.83 25Z"
+                  fill="#ffffff" class="fill-010101"></path>
+                <path d="M32 50a1 1 0 0 1-1-1V31a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1Z" fill="#ffffff" class="fill-010101">
+                </path>
+              </svg>
             </div>
           </div>
         </div>
@@ -96,25 +99,30 @@
           </div> -->
 
           <form id="newNameRequest" class="newForm">
-          <label for="template_changename" id="changename" class="newLabel" tabindex="44"
-          >Change display name<input class="newwinput" id="template_changename" type="text" placeholder="New name" name="newname">
-          </label>
-          <button id="changenamesubmit" class="namesubmit submitdisabled">
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" fill="white"/>
-            </svg>            
-          </button>
+            <label for="template_changename" id="changename" class="newLabel" tabindex="44">Change display name<input
+                class="newwinput" id="template_changename" type="text" placeholder="New name" name="newname">
+            </label>
+            <button id="changenamesubmit" class="namesubmit submitdisabled">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                  fill="white" />
+              </svg>
+            </button>
           </form>
 
           <form id="newPasswordRequest" class="newForm">
-          <label for="template_changepass" id="changepass" class="newLabel" tabindex="45">Change accescode  
-            <input class="newwinput" id="template_changepass" type="password" placeholder="New passcode" name="newpass">
-          </label>
-          <button id="changepasssubmit" class="namesubmit submitdisabled">
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" fill="white"/>
-            </svg>            
-          </button>
+            <label for="template_changepass" id="changepass" class="newLabel" tabindex="45">Change accescode
+              <input class="newwinput" id="template_changepass" type="password" placeholder="New passcode"
+                name="newpass">
+            </label>
+            <button id="changepasssubmit" class="namesubmit submitdisabled">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                  fill="white" />
+              </svg>
+            </button>
 
           </form>
 
@@ -130,7 +138,7 @@
             </form>
           </div> -->
           <div class="template_container last" tabindex="5">
-              <a href="/logout" class="logout-button">Logout</a>
+            <a href="/logout" class="logout-button">Logout</a>
           </div>
         </div>
 
@@ -138,7 +146,9 @@
           <h4 class="customize_headertext">More Apps</h4>
           <div class="template_container" tabindex="6">
             <div class="template_text_container">
-              <a class="nolink" href="http://daranhub.com" target="_blank"><p class="template_text">DaranHub</p></a>
+              <a class="nolink" href="http://daranhub.com" target="_blank">
+                <p class="template_text">DaranHub</p>
+              </a>
             </div>
           </div>
           <div class="template_container last interactnt" tabindex="7">
@@ -154,7 +164,7 @@
         </div>
 
       </div>
-      
+
     </div>
     <!-- CAJA DE LA CAMARA -->
     <div class="camera animate__animated  disabled">
@@ -177,25 +187,27 @@
   </aside>
   <!-- CHAT BOX ALMACENA ABSOLUTAMENTE TODO -->
 
-  
+
   <div class="chatbox">
 
     <!-- CAJA QUE ALMACENA LOS MENSAJES, AUDIOS, VIDEOS, FOTOS -->
     <div id="messageContainer" class="messageContainer">
+      <div class="pepe"></div>
     </div>
-
+    
     <!-- INPUT DE MENSAJES -->
-
+    
     <div class="inputContainer">
       <div class="text_N_button">
         <textarea id="newinput" class="newtextarea" placeholder="Mensaje"></textarea>
         <span class="media-container">
           <!-- BOTON DE EL CLIP -->
-          <input id="uploadFile" type="file" accept="audio/*,video/*,image/*,application/zip,application/*" style="display: none;">
+          <input id="uploadFile" type="file" accept="audio/*,video/*,image/*,application/zip,application/*"
+          style="display: none;">
           <label for="uploadFile" class="cameraButton clip button-47">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px"
-              width="512px" viewBox="0 0 16 16" version="1.1" style="enable-background:new 0 0 16 16;" id="Layer_1_1_"
-              xml:space="preserve">
+            width="512px" viewBox="0 0 16 16" version="1.1" style="enable-background:new 0 0 16 16;" id="Layer_1_1_"
+            xml:space="preserve">
               <path class="svgColor"
                 d="M7.646,13.646l0.707,0.707l6-6c1.573-1.573,1.573-4.134,0-5.707c-1.574-1.574-4.133-1.574-5.707,0l-6.5,6.5  c-1.298,1.298-1.298,3.409,0,4.707c0.648,0.648,1.501,0.974,2.354,0.974s1.705-0.325,2.354-0.974l6-6  C13.349,7.358,13.621,6.7,13.621,6s-0.272-1.358-0.768-1.854c-0.99-0.99-2.717-0.99-3.707,0l-5.5,5.5l0.707,0.707l5.5-5.5  c0.611-0.611,1.682-0.611,2.293,0C12.452,5.159,12.621,5.566,12.621,6s-0.169,0.841-0.475,1.146l-6,6  c-0.908,0.908-2.385,0.908-3.293,0s-0.908-2.385,0-3.293l6.5-6.5c1.184-1.184,3.109-1.184,4.293,0s1.184,3.109,0,4.293L7.646,13.646z" />
             </svg>
@@ -203,38 +215,40 @@
           <!-- BOTON DE CAMARA ABRIR -->
           <button class="abrircamara cameraButton cameraButtonOn button-47">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px"
-              width="512px" viewBox="0 0 512 512" id="Layer_1" style="enable-background:new 0 0 512 512;"
-              xml:space="preserve">
-              <g>
-                <path class="svgColor"
-                  d="M430.4,147h-67.5l-40.4-40.8c0,0-0.2-0.2-0.3-0.2l-0.2-0.2v0c-6-6-14.1-9.8-23.3-9.8h-84c-9.8,0-18.5,4.2-24.6,10.9l0,0.1   l-39.5,40H81.6C63,147,48,161.6,48,180.2v202.1c0,18.6,15,33.7,33.6,33.7h348.8c18.5,0,33.6-15.1,33.6-33.7V180.2   C464,161.6,448.9,147,430.4,147z M256,365.5c-50.9,0-92.4-41.6-92.4-92.6c0-51.1,41.5-92.6,92.4-92.6c51,0,92.4,41.5,92.4,92.6   C348.4,323.9,307,365.5,256,365.5z M424.1,200.5c-7.7,0-14-6.3-14-14.1s6.3-14.1,14-14.1c7.7,0,14,6.3,14,14.1   S431.8,200.5,424.1,200.5z" />
-                <path class="svgColor"
-                  d="M256,202.9c-38.6,0-69.8,31.3-69.8,70c0,38.6,31.2,70,69.8,70c38.5,0,69.8-31.3,69.8-70C325.8,234.2,294.5,202.9,256,202.9z" />
-              </g>
-            </svg>
-
-          </button>
-          <!-- BOTON DE CAMARA CERRAR -->
-
-          <button class="cerrarcamara cameraButton cameraButtonOff disabled button-47">
-            <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-x" fill="red" height="512px" width="512px"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              xmlns="http://www.w3.org/2000/svg">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-
-          </button>
-        </span>
-      </div>
+            width="512px" viewBox="0 0 512 512" id="Layer_1" style="enable-background:new 0 0 512 512;"
+            xml:space="preserve">
+            <g>
+              <path class="svgColor"
+              d="M430.4,147h-67.5l-40.4-40.8c0,0-0.2-0.2-0.3-0.2l-0.2-0.2v0c-6-6-14.1-9.8-23.3-9.8h-84c-9.8,0-18.5,4.2-24.6,10.9l0,0.1   l-39.5,40H81.6C63,147,48,161.6,48,180.2v202.1c0,18.6,15,33.7,33.6,33.7h348.8c18.5,0,33.6-15.1,33.6-33.7V180.2   C464,161.6,448.9,147,430.4,147z M256,365.5c-50.9,0-92.4-41.6-92.4-92.6c0-51.1,41.5-92.6,92.4-92.6c51,0,92.4,41.5,92.4,92.6   C348.4,323.9,307,365.5,256,365.5z M424.1,200.5c-7.7,0-14-6.3-14-14.1s6.3-14.1,14-14.1c7.7,0,14,6.3,14,14.1   S431.8,200.5,424.1,200.5z" />
+              <path class="svgColor"
+              d="M256,202.9c-38.6,0-69.8,31.3-69.8,70c0,38.6,31.2,70,69.8,70c38.5,0,69.8-31.3,69.8-70C325.8,234.2,294.5,202.9,256,202.9z" />
+            </g>
+          </svg>
+          
+        </button>
+        <!-- BOTON DE CAMARA CERRAR -->
+        
+        <button class="cerrarcamara cameraButton cameraButtonOff disabled button-47">
+          <svg xmlns="http://www.w3.org/2000/svg" class="feather feather-x" fill="red" height="512px" width="512px"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          xmlns="http://www.w3.org/2000/svg">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+        
+      </button>
+    </span>
+  </div>
       <span class="sendbutton-container">
         <!-- BOTON DE GRABAR NOTA -->
         <button class="grabarnota messageButton messageButtonOn rec ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
             <title></title>
-            <path class="svgColor" d="M24,33a8,8,0,0,0,8-8V9A8,8,0,0,0,16,9V25A8,8,0,0,0,24,33ZM20,9a4,4,0,0,1,8,0V25a4,4,0,0,1-8,0Z"/>
-            <path class="svgColor" d="M38,25a2,2,0,0,0-4,0,10,10,0,0,1-20,0,2,2,0,0,0-4,0A14,14,0,0,0,22,38.84V43H21a2,2,0,0,0,0,4h6a2,2,0,0,0,0-4H26V38.84A14,14,0,0,0,38,25Z"/>
-          </svg>          
+            <path class="svgColor"
+            d="M24,33a8,8,0,0,0,8-8V9A8,8,0,0,0,16,9V25A8,8,0,0,0,24,33ZM20,9a4,4,0,0,1,8,0V25a4,4,0,0,1-8,0Z" />
+            <path class="svgColor"
+            d="M38,25a2,2,0,0,0-4,0,10,10,0,0,1-20,0,2,2,0,0,0-4,0A14,14,0,0,0,22,38.84V43H21a2,2,0,0,0,0,4h6a2,2,0,0,0,0-4H26V38.84A14,14,0,0,0,38,25Z" />
+          </svg>
         </button>
         <div>
           <!-- BOTON DE ENVIAR MENSAJE -->
@@ -251,52 +265,55 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
               <title></title>
               <path d="M24,33a8,8,0,0,0,8-8V9A8,8,0,0,0,16,9V25A8,8,0,0,0,24,33ZM20,9a4,4,0,0,1,8,0V25a4,4,0,0,1-8,0Z"
-                fill="red" />
+              fill="red" />
               <path
-                d="M38,25a2,2,0,0,0-4,0,10,10,0,0,1-20,0,2,2,0,0,0-4,0A14,14,0,0,0,22,38.84V43H21a2,2,0,0,0,0,4h6a2,2,0,0,0,0-4H26V38.84A14,14,0,0,0,38,25Z"
-                fill="red" />
+              d="M38,25a2,2,0,0,0-4,0,10,10,0,0,1-20,0,2,2,0,0,0-4,0A14,14,0,0,0,22,38.84V43H21a2,2,0,0,0,0,4h6a2,2,0,0,0,0-4H26V38.84A14,14,0,0,0,38,25Z"
+              fill="red" />
             </svg>
           </button>
         </div>
       </span>
-      </div>
-
-
-
-
+      
+      
+      
+      
     </div>
-
+    
     <br>
     <br>
-
+    
     <% if (error) { %>
       <div class="error-message">
-        <%error %>
-      </div>
-      <% } %>
-      
+      <%error %>
+    </div>
+    <% } %>
 
 
-      <!-- <form id="newPasswordRequest" method="POST" action="/changepass">
+
+    <!-- <form id="newPasswordRequest" method="POST" action="/changepass">
         <input type="text" name="oldpass" placeholder="introduce tu contraactual">
         <input type="text" name="newpass" placeholder="introduce tu nueva contra">
         <input type="submit">
       </form>  -->
-      <div id="modalWindow" style="position: absolute; background-color: rgba(0, 0, 0, 0.387); inset: 0; width: 100vw; height: 100vh; margin: auto; z-index: 15; display: none;">
-        <img src="./template1.png" alt="xd" style="position: absolute; inset: 0; margin: auto; max-height: 85vh; max-width: 90vw;">
+
+      <div id="modalWindow"
+        style="position: absolute; background-color: rgba(0, 0, 0, 0.387); inset: 0; width: 100vw; height: 100vh; margin: auto; z-index: 15; display: none;">
+        <img src="./template1.png" alt="xd"
+        style="position: absolute; inset: 0; margin: auto; max-height: 85vh; max-width: 90vw;">
       </div>
-        <script src="slideanimation.js?version=<%= Math.random() %>"></script>
-        <script src="clientid.js"></script>
-        <script src="/socket.io/socket.io.min.js"></script>
-        <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-        <script src="voicenote.js?version=<%= Math.random() %>" type="text/javascript"></script>
-        <script src="video.js?version=<%= Math.random() %>" type="text/javascript"></script>
-        <script src="photo.js?version=<%= Math.random() %>" type="text/javascript"></script>
-        <script src="profile.js?version=<%= Math.random() %>"></script>
-        <script src="noRepeatOwner.js"></script>
-        <script src="app.js?version=<%= Math.random() %>" type="text/javascript"></script>
+      <script src="slideanimation.js?version=<%= Math.random() %>"></script>
+      <script src="clientid.js"></script>
+      <script src="/socket.io/socket.io.min.js"></script>
+      <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+      <script src="voicenote.js?version=<%= Math.random() %>" type="text/javascript"></script>
+      <script src="video.js?version=<%= Math.random() %>" type="text/javascript"></script>
+      <script src="photo.js?version=<%= Math.random() %>" type="text/javascript"></script>
+      <script src="profile.js?version=<%= Math.random() %>"></script>
+      <script src="noRepeatOwner.js"></script>
+      <script src="app.js?version=<%= Math.random() %>" type="text/javascript"></script>
+
+
 
 </body>
 
 </html>
-
