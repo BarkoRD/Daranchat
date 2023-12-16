@@ -622,6 +622,7 @@ body {
   order: 99;
   justify-content: space-between;
   column-gap: 5px;
+  position: relative;
 }
 
 .text_N_button {
@@ -732,10 +733,8 @@ body {
 .messageContainer {
   display: flex;
   flex-direction: column;
-  /* // height: 85vh; */
   overflow: auto;
   padding-bottom: 20px;
-  scroll-timeline-name: --pepe;
 
 }
 
@@ -1412,25 +1411,17 @@ body {
   margin-top: 4px;
 }
 
-.pepe{
-  width: 100px;
-  height: 100px;
+.tonewmessages{
+  width: 60px;
+  height: 60px;
   position: absolute;
-  bottom: 0;
-  background-color: red;
-
-  /* animation-name: aparecer;
-  animation-timing-function: step-end;
-  animation-direction: alternate-reverse; */
-  animation: aparecer  step-end   alternate-reverse;
-  animation-timeline: --pepe;
+  background-color: transparent;
+  border: none;
+  top: -60px;
+  left: 46%;
+  opacity: 0.8;
 }
 
-@keyframes aparecer{
-  0%{
-    opacity: 0;
-  }
-  20%{
-    opacity: 1;
-  }
+.fondoo{
+  fill: var(--bgChat);
 }

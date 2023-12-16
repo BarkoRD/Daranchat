@@ -1,3 +1,9 @@
+window.addEventListener("keydown", function (e) {
+  if (e.key == "Tab") {
+    e.preventDefault()
+  }
+})
+
 const sendPhoto = (photo, owner, id, photosrc) => {
   if (photosrc) {
     socket.emit("client:newphoto", {
@@ -438,4 +444,33 @@ newinput.addEventListener("input", (e) => {
     send.classList.remove("disabled")
     rec.classList.add("disabled")
   }
+})
+
+let lastScrollTop = 0;
+const scrollTriggerPercentage = 25;
+
+
+const chatboxtoscroll = document.getElementById('messageContainer')
+
+chatboxtoscroll.addEventListener("scroll",()=>{
+  let scrollTop = chatboxtoscroll.scrollTop
+
+  let scrollPercentage = (scrollTop / (chatboxtoscroll.scrollHeight - chatboxtoscroll.clientHeight)) * 100;
+  
+
+  if (scrollTop < lastScrollTop && scrollPercentage <= scrollTriggerPercentage) {
+    tonewmessages.classList.remove("disabled")
+}else{
+  tonewmessages.classList.add("disabled")
+}
+
+lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+})
+
+const tonewmessages = document.getElementById('tonewmessages')
+
+tonewmessages.addEventListener('click',(e)=>{
+  e.preventDefault
+  chatboxtoscroll.scrollTop = chatboxtoscroll.scrollHeight;
 })

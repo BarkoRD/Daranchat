@@ -192,12 +192,17 @@
 
     <!-- CAJA QUE ALMACENA LOS MENSAJES, AUDIOS, VIDEOS, FOTOS -->
     <div id="messageContainer" class="messageContainer">
-      <div class="pepe"></div>
     </div>
     
     <!-- INPUT DE MENSAJES -->
     
     <div class="inputContainer">
+    <button class="tonewmessages disabled" id="tonewmessages"><svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 10h25v25h-25z" fill="white"/>
+      <path class="fondoo" d="M24 4c-11.05 0-20 8.95-20 20s8.95 20 20 20 20-8.95 20-20-8.95-20-20-20zm0 24l-8-8h16l-8 8z"/>
+    </svg>
+    </button>
+
       <div class="text_N_button">
         <textarea id="newinput" class="newtextarea" placeholder="Mensaje"></textarea>
         <span class="media-container">
@@ -278,9 +283,7 @@
       
       
     </div>
-    
-    <br>
-    <br>
+
     
     <% if (error) { %>
       <div class="error-message">
