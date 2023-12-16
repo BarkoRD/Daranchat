@@ -14,7 +14,7 @@ Introducing a new functionality! Now, you can easily paste photos directly from 
 
 ### Bug Fixes
 
-**<br><br/>**
+"br tags"
 We removed two br tags that apparently were useless (xd)
 
 > *Pending Features for Future Versions:*
