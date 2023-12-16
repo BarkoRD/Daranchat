@@ -1,86 +1,128 @@
-const socket = io();
+const socket = io()
 
-const startButton = document.querySelector(".grabarnota");
-const stopButton = document.querySelector(".cortarnota");
-const recordingsList = document.querySelector(".messageContainer");
+const startButton = document.querySelector(".grabarnota")
+const stopButton = document.querySelector(".cortarnota")
+const recordingsList = document.querySelector(".messageContainer")
 
-let mediaRecorder;
-let chunks = [];
+let mediaRecorder
+let chunks = []
 
 socket.on("server:newaudio", (audio) => {
-  const audioBlob = new Blob([audio.audio], { type: "audio/mpeg" });
-  const audioURL = URL.createObjectURL(audioBlob);
+  const audioBlob = new Blob([audio.audio], { type: "audio/mpeg" })
+  const audioURL = URL.createObjectURL(audioBlob)
   // Crea un elemento "audio vacio con los controles activados"
-  const audiobox = document.createElement("audio");
-  audiobox.classList.add("voicenote", "plyr");
-  audiobox.controls = true;
-  audiobox.id = "player";
+  const audiobox = document.createElement("audio")
+  audiobox.classList.add("voicenote", "plyr")
+  audiobox.controls = true
+  audiobox.id = "player"
   // Crea un "source" que dentro tendra el link del blob ya transformado a audio
-  const source = document.createElement("source");
-  source.src = audioURL;
-  source.type = "audio/mpeg";
+  const source = document.createElement("source")
+  source.src = audioURL
+  source.type = "audio/mpeg"
 
   // une el source del audio con el elemento audio
-  audiobox.appendChild(source);
+  audiobox.appendChild(source)
 
   // Agrega el elemento de audio al DOM
-  appendAudio(audiobox, audio.id, audio.owner);
-
+  appendAudio(audiobox, audio.id, audio.owner)
+  chatbox.scrollTop = chatbox.scrollHeight
 
   // Obtener el elemento por su clase
-  let voiceNoteStyle = document.querySelector('.right .voicenotestyle');
+  let voiceNoteStyle = document.querySelector(".right .voicenotestyle")
 
+  // switch (actualColor) {
+  //   case "rgb(0, 158, 158)":
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-controls-background",
+  //       "var(--bgRight)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-range-thumb-background",
+  //       "var(--bgAside)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-range-track-background",
+  //       "var(--bgChat)"
+  //     )
+  //     voiceNoteStyle.style.setProperty("--plyr-color-main", "var(--bgChat)")
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-control-color",
+  //       "var(--bgChat)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-control-color-hover",
+  //       "var(--texto)"
+  //     )
+  //     break
+  //   case "rgb(237, 125, 49)":
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-controls-background",
+  //       "var(--bgRightO)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-range-thumb-background",
+  //       "var(--bgAsideO)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-range-track-background",
+  //       "var(--bgChatO)"
+  //     )
+  //     voiceNoteStyle.style.setProperty("--plyr-color-main", "var(--bgChatO)")
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-control-color",
+  //       "var(--bgChatO)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-control-color-hover",
+  //       "var(--textoO)"
+  //     )
+  //     break
+  //   case "rgb(232, 237, 123)":
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-controls-background",
+  //       "var(--bgRightC)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-range-thumb-background",
+  //       "var(--bgAsideC)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-range-track-background",
+  //       "var(--bgChatC)"
+  //     )
+  //     voiceNoteStyle.style.setProperty("--plyr-color-main", "var(--bgChatC)")
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-control-color",
+  //       "var(--bgChatC)"
+  //     )
+  //     voiceNoteStyle.style.setProperty(
+  //       "--plyr-audio-control-color-hover",
+  //       "var(--textoC)"
+  //     )
+  //     break
+  // }
 
-  switch (actualColor) {
-    case "rgb(0, 158, 158)":
-      voiceNoteStyle.style.setProperty('--plyr-audio-controls-background', 'var(--bgRight)');
-      voiceNoteStyle.style.setProperty('--plyr-range-thumb-background', 'var(--bgAside)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-range-track-background', 'var(--bgChat)');
-      voiceNoteStyle.style.setProperty('--plyr-color-main', 'var(--bgChat)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-control-color', 'var(--bgChat)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-control-color-hover', 'var(--texto)');
-      break;
-    case "rgb(237, 125, 49)":
-      voiceNoteStyle.style.setProperty('--plyr-audio-controls-background', 'var(--bgRightO)');
-      voiceNoteStyle.style.setProperty('--plyr-range-thumb-background', 'var(--bgAsideO)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-range-track-background', 'var(--bgChatO)');
-      voiceNoteStyle.style.setProperty('--plyr-color-main', 'var(--bgChatO)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-control-color', 'var(--bgChatO)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-control-color-hover', 'var(--textoO)');
-      break;
-    case "rgb(232, 237, 123)":
-      voiceNoteStyle.style.setProperty('--plyr-audio-controls-background', 'var(--bgRightC)');
-      voiceNoteStyle.style.setProperty('--plyr-range-thumb-background', 'var(--bgAsideC)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-range-track-background', 'var(--bgChatC)');
-      voiceNoteStyle.style.setProperty('--plyr-color-main', 'var(--bgChatC)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-control-color', 'var(--bgChatC)');
-      voiceNoteStyle.style.setProperty('--plyr-audio-control-color-hover', 'var(--textoC)');
-      break;
-  }
-
-
-
-
-});
+  // estos estilos no estan haciendo nada RICARDO
+})
 
 const appendAudio = (audio, id, owner) => {
-  console.log(audio);
-  let clientId = localStorage.getItem("userid");
+  console.log(audio)
+  let clientId = localStorage.getItem("userid")
 
-  const voicenote = document.createElement("div");
-  const div = document.createElement("div");
-  const ownername = document.createElement("div");
-  div.classList.add("message");
+  const voicenote = document.createElement("div")
+  const div = document.createElement("div")
+  const ownername = document.createElement("div")
+  div.classList.add("message")
 
-  ownername.innerHTML = `${owner}`;
+  ownername.innerHTML = `${owner}`
 
-  ownername.classList.add("owner");
-  voicenote.classList.add("content");
-  voicenote.classList.add("voicenotestyle");
+  ownername.classList.add("owner")
+  voicenote.classList.add("content")
+  voicenote.classList.add("voicenotestyle")
 
-  voicenote.appendChild(audio);
-  div.appendChild(ownername);
-  div.appendChild(voicenote);
+  voicenote.appendChild(audio)
+  div.appendChild(ownername)
+  div.appendChild(voicenote)
 
   const player = new Plyr(audio, {
     speed: {
@@ -88,78 +130,75 @@ const appendAudio = (audio, id, owner) => {
       options: [1, 1.5, 2],
     },
     controls: ["play", "progress", "duration", "settings"],
-  });
+  })
   if (id !== clientId) {
-    div.classList.add("left");
+    div.classList.add("left")
   } else {
-    div.classList.add("right");
+    div.classList.add("right")
   }
-  recordingsList.appendChild(div);
-};
+  recordingsList.appendChild(div)
+}
 
 // Evento clic del botón "Detener grabación"
 
 stopButton.addEventListener("click", (e) => {
-  let elementos = [newtextarea, option1, option2, option3, cameraButtonOn];
-  elementos[0].placeholder = 'Mensaje'
-  elementos.forEach((e)=>{
-      e.style.pointerEvents = 'auto';
-  
+  let elementos = [newtextarea, option1, option2, option3, cameraButtonOn]
+  elementos[0].placeholder = "Mensaje"
+  elementos.forEach((e) => {
+    e.style.pointerEvents = "auto"
   })
-  e.preventDefault();
+  e.preventDefault()
 
-  mediaRecorder.stop();
-});
+  mediaRecorder.stop()
+})
 
 //Evento clic del botón "Iniciar grabación"
 
 startButton.addEventListener("click", async (e) => {
-  e.preventDefault();
-  let elementos = [newtextarea, option1, option2, option3, cameraButtonOn];
-  elementos[0].placeholder = 'Grabando audio...'
-  elementos.forEach((e)=>{
-      e.style.pointerEvents = 'none';
-  
+  e.preventDefault()
+  let elementos = [newtextarea, option1, option2, option3, cameraButtonOn]
+  elementos[0].placeholder = "Grabando audio..."
+  elementos.forEach((e) => {
+    e.style.pointerEvents = "none"
   })
-  chunks = [];
+  chunks = []
 
   // pedir permiso de microfono
-  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
 
   // se establece que se recibira audio microfono o video o etc
-  mediaRecorder = new MediaRecorder(stream);
+  mediaRecorder = new MediaRecorder(stream)
 
   // escucha el evento de "grabando" de media recorder y comienza
   // a guardar el audio en chunks(el array)
 
   mediaRecorder.addEventListener("dataavailable", (e) => {
-    chunks.push(e.data);
-    
-  });
+    chunks.push(e.data)
+  })
 
   // escucha el evento de detener la grabacion aqui dentro se convierte el
   // contenido de chunks a un "blob" un blob es un conjunto de datos binarios
   // que se puede transformar en algo en este caso este blob se transformara en audio
   // el blob transformado se metera dentro de un link
   mediaRecorder.addEventListener("stop", () => {
-    const blob = new Blob(chunks, { type: "audio/mpeg" });
-    let clientId = localStorage.getItem("userid");
+    const blob = new Blob(chunks, { type: "audio/mpeg" })
+    let clientId = localStorage.getItem("userid")
     const sendAudio = (audio, owner, id) => {
       socket.emit("client:newaudio", {
         audio,
         owner,
         id,
-      });
-    };
-    sendAudio(blob, "elpepe", clientId);
+      })
+    }
+    sendAudio(blob, "elpepe", clientId)
 
     // Limpia los datos y restablece los botones
-    chunks = [];
-  });
+    chunks = []
+  })
 
-  // Comienza la grabación   
-  mediaRecorder.start();
-});
+  // Comienza la grabación
+  mediaRecorder.start()
+})
 
 // AAAAAAARRRRRREEEEEGGGGGLLLAAAAARRRR BUG DE QUE NO SE VE LA DURACION SI NO DOY CLICK
 // AAAAAAARRRRRREEEEEGGGGGLLLAAAAARRRR BUG DE QUE NO SE VE LA DURACION SI NO DOY CLICK

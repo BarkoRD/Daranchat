@@ -1,30 +1,23 @@
-# DaranChat 2.9.0 - Patch Notes
-Greetings, DaranChat users! We are excited to present the latest update, version 2.9.0, packed with enhancements and new features to elevate your chat experience.
+# DaranChat 2.9.1 - Patch Notes
+Greetings, DaranChat users! We are excited to present the latest update, version 2.9.1, packed with enhancements and new features to elevate your chat experience.
 
 ## New Features:
 
-**Full-Screen Display for Sent Photos**
-Now you can view photos sent in the chat in full-screen mode, enhancing your visual experience.
+**Autoscroll on Sending Messages**
+The app now has the auto-scroll feature when sending messages. Enjoy a smoother chat experience without having to worry about missing any important messages!
 
-**Hover Effect on Chat Photos**
-Implemented a hover effect on chat photos to indicate that they are clickable. Easily interact with images for a more engaging conversation
+**Down Bbutton**
+We've added a handy button that allows you to easily scroll through the conversation. Quickly browse through old messages and access the information you need efficiently!
 
-### Bug Fixes:
+**Paste Photos Directly from Google**
+Introducing a new functionality! Now, you can easily paste photos directly from Google into the chat, making the sharing of images more convenient than ever.
 
-**Bug Resolved: Unable to Send Multiple Audios**
-Fixed a bug that prevented users from recording more than one audio.
+### Bug Fixes
 
+**<br><br/>**
+We removed two br tags that apparently were useless (xd)
 
 > *Pending Features for Future Versions:*
-
-*Ensure users cannot set a password previously used by another user when changing their passwords. This involves implementing similar checks as in the registration section.*
-
-*Autoscroll when Sending Messages*
-*Planned feature to enable autoscrolling when sending messages, providing a seamless chat experience.*
-
-*Scroll Down Button*
-*Introducing a scroll-down button for effortless navigation through the conversation, allowing users to quickly access older messages.*
-*Fix for Pasting Photos Copied from Google*
 
 *Drag & Drop Functionality*
 *Planned addition of drag and drop functionality for an intuitive way to share files.*

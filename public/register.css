@@ -60,7 +60,6 @@ form h1 {
   margin-block: 5px 80px;
   font-size: 20px;
   opacity: 0.9;
-
 }
 
 form div {
@@ -68,7 +67,6 @@ form div {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 form div input[type="password"] {
@@ -85,17 +83,17 @@ form div input[type="password"] {
 }
 
 form div input[type="text"] {
-    color: black;
-    height: 45px;
-    width: 100%;
-    border-radius: 6px;
-    border: none;
-    padding: 10px;
-    margin-block: 2px 40px;
-    font-size: 18px;
-    border: 1px solid #cad3dc;
-    transition: border ease-in 0.12s, box-shadow ease-in 0.12s;
-  }
+  color: black;
+  height: 45px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+  margin-block: 2px 40px;
+  font-size: 18px;
+  border: 1px solid #cad3dc;
+  transition: border ease-in 0.12s, box-shadow ease-in 0.12s;
+}
 
 form div input[type="password"]:focus {
   outline: none;
@@ -104,10 +102,10 @@ form div input[type="password"]:focus {
 }
 
 form div input[type="text"]:focus {
-    outline: none;
-    border-color: #61d4d5;
-    box-shadow: 0 0 8px #61d3d582;
-  }
+  outline: none;
+  border-color: #61d4d5;
+  box-shadow: 0 0 8px #61d3d582;
+}
 
 form div label {
   align-self: flex-start;
@@ -122,14 +120,14 @@ form div input[type="submit"] {
   font-size: 1.1rem;
 }
 
-form+span {
+form + span {
   display: inline-block;
   width: 100%;
   margin-block: 40px;
   text-align: center;
 }
 
-main form+span a {
+main form + span a {
   display: block;
   color: #61d4d5;
   text-decoration: underline;
@@ -141,7 +139,7 @@ footer {
   padding-bottom: 30px;
 }
 
-footer section{
+footer section {
   margin-left: 5%;
 }
 
@@ -153,7 +151,6 @@ footer h2 {
 
 footer ul {
   padding: 25px;
-
 }
 
 footer ul li {
@@ -164,7 +161,7 @@ footer ul li {
 }
 
 hr {
-  opacity: .1;
+  opacity: 0.1;
 }
 
 footer div {
@@ -209,12 +206,9 @@ footer .img2 {
     margin-block: 40px 0px;
   }
 
-  
-
   .registrate a {
     color: #61d4d5;
     text-decoration: underline;
-
   }
 
   form div input[type="password"] {
@@ -236,45 +230,43 @@ footer .img2 {
   form div label {
     opacity: 0.9;
     margin-bottom: 3px;
-
   }
 
   form div input[type="submit"] {
     padding: 10px 45px;
     margin-top: 35px;
-
   }
 
-  form+span {
+  form + span {
     display: none;
   }
-  
+
   footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
   }
-  footer section{
+  footer section {
     display: flex;
     justify-content: space-evenly;
   }
-  
+
   footer ul:last-of-type {
     margin: 0;
     padding: 25px;
   }
-  
+
   footer ul li {
     line-height: 150%;
     font-size: 1.2rem;
     list-style: none;
     cursor: pointer;
   }
-  
+
   hr {
-    opacity: .1;
+    opacity: 0.1;
   }
-  
+
   footer div {
     display: flex;
     flex-direction: column;
@@ -282,20 +274,19 @@ footer .img2 {
     row-gap: 10px;
     margin-top: 30px;
   }
-  
+
   footer span {
     display: flex;
     align-items: center;
   }
-  
+
   .fLogo {
     max-width: 150px;
   }
-  
+
   footer .img1,
   footer .img2 {
     margin-inline: 3px;
     transform: scale(1.2);
   }
-
 }
