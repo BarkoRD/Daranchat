@@ -449,9 +449,9 @@ body {
 
 .info-container2 .logout-button {
   text-align: center;
-  padding-block: 20px;
+  padding-block: 15px;
   color: rgba(255, 255, 255, 0.73);
-  font-size: 3vw;
+  font-size: 2vw;
   font-family: "Advent Pro", sans-serif;
   width: 100%;
   text-decoration: none;
