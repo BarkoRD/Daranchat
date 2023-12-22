@@ -186,7 +186,7 @@ const tourl = (text) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
- history.pushState({}, "", "/")
+//  history.pushState({}, "", "/")
   socket.emit("client:requestusername")
   setTimeout(() => {
     newtextarea.focus()

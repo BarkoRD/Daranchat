@@ -154,10 +154,10 @@ body {
 }
 
 .options-container {
+  
   margin: auto;
-  margin-top: 20px;
   width: 80%;
-  height: 95%;
+  height: 72vh;
   position: relative;
   overflow: hidden;
 }
@@ -176,6 +176,77 @@ body {
   transform: translateX(0);
 }
 
+.info {
+  margin: 20px auto;
+  margin-top: 0px;
+  width: 90%;
+  height: 80%;
+  border-radius: 20px;
+  margin-bottom: 75px;
+  color: var(--msgLeft);
+  padding: 20px;
+}
+
+.info h4 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.info .lorem {
+  margin: auto;
+  margin-block: 4vh 6vh;
+  width: 23vw;
+  font-size: 30px;
+  color: var(--msgLeft);
+  transition: font-size 0.3s ease-in-out; /* Puedes ajustar la duración y la función de temporización según tus preferencias */
+}
+
+.info .lorem a:visited {
+  color: #e31b4d;
+}
+
+.info .tec {
+  background-color: rgb(58, 58, 58);
+  padding-block: 30px;
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  margin-top: 0px;
+  border-radius: 15px;
+  box-shadow: -1px 3px 29px -1px rgba(0, 0, 0, 0.75);
+}
+
+.info p {
+  margin-top: 10vh;
+  text-align: center;
+  margin-left: 2px;
+  font-size: 1.2rem;
+}
+
+.info p b {
+  color: var(--texto);
+}
+
+.info p .p_online {
+  color: var(--texto);
+  font: normal 1.3rem Varela Round, sans-serif;
+  animation: move linear 2000ms infinite;
+}
+
+.info span {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.info .img {
+  height: 65px;
+}
+
+.info a img {
+  height: 65px;
+}
+
 .info-container1 {
   background-size: cover;
   background-repeat: no-repeat;
@@ -187,7 +258,7 @@ body {
 }
 
 .info-container1 .customize_headertext {
-  margin-top: 20px;
+  margin-top: 0px;
   width: 265px;
   color: #fff;
   font-family: "Montserrat";
@@ -199,8 +270,8 @@ body {
 
 .info-container1 .template_container {
   width: 90%;
-  margin-top: 25px;
-  /* height: 110px; */
+  margin-top: 3vh;
+  height: 12vh;
   padding: 5px;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.7);
@@ -234,7 +305,7 @@ body {
 }
 
 .template_container .imgcontainer img {
-  height: 100px;
+  height: 10vh;
 }
 
 .template_container .template_text_container {
@@ -247,7 +318,7 @@ body {
 
 .template_container .template_text_container .template_text {
   color: rgba(255, 255, 255, 0.73);
-  font-size: 35px;
+  font-size: 2.4vw;
   text-align: left;
   padding-left: 10px;
   margin-top: 0px;
@@ -257,15 +328,7 @@ body {
 
 .info-container1 .last {
   width: 90%;
-  /* height: 75px; */
-  margin-top: 35px;
-  /* display: flex; */
-  /* column-gap: 10px; */
-  /* justify-content: space-between; */
-  /* 
-    border-radius: 20px;
-    border: 1px solid #FFF;
-    display: inline; */
+  margin-top: 3vh;
 }
 
 .info-container1 .last .contenedordeltexto {
@@ -280,15 +343,11 @@ body {
   padding-top: 0px;
   color: rgba(255, 255, 255, 0.73);
   background-color: rgba(0, 0, 0, 0.7);
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   margin-top: 0px;
   margin-left: 0px;
   font-family: "Advent Pro", sans-serif;
   cursor: pointer;
-  /* display: inline-block; */
-  /* width: auto; */
-  /* height: auto; */
-  /* text-align: center; */
   height: 100%;
   width: 78%;
   padding: 10px 0;
@@ -392,7 +451,7 @@ body {
   text-align: center;
   padding-block: 20px;
   color: rgba(255, 255, 255, 0.73);
-  font-size: 35px;
+  font-size: 3vw;
   font-family: "Advent Pro", sans-serif;
   width: 100%;
   text-decoration: none;
@@ -486,7 +545,7 @@ body {
 .info-container3 .template_container .template_text_container .template_text {
   color: rgba(255, 255, 255, 0.73);
   text-align: center;
-  font-size: 45px;
+  font-size: 3vw;
   font-family: "Advent Pro", sans-serif;
   margin-top: 0px;
   margin-left: 0px;
@@ -501,76 +560,7 @@ body {
   margin: 20px;
 }
 
-.info {
-  margin: 20px auto;
-  margin-top: 0px;
-  width: 90%;
-  height: 80%;
-  border-radius: 20px;
-  margin-bottom: 75px;
-  color: var(--msgLeft);
-  padding: 20px;
-}
 
-.info h4 {
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.info .lorem {
-  margin: auto;
-  margin-block: 50px 60px;
-  margin-top: 40px;
-  width: 400px;
-  font-size: 30px;
-  color: var(--msgLeft);
-}
-
-.info .lorem a:visited {
-  color: #e31b4d;
-}
-
-.info .tec {
-  background-color: rgb(58, 58, 58);
-  padding-block: 30px;
-  text-align: center;
-  margin: auto;
-  width: 200px;
-  margin-top: 0px;
-  border-radius: 15px;
-  box-shadow: -1px 3px 29px -1px rgba(0, 0, 0, 0.75);
-}
-
-.info p {
-  margin-top: 90px;
-  text-align: center;
-  margin-left: 2px;
-  font-size: 1.2rem;
-}
-
-.info p b {
-  color: var(--texto);
-}
-
-.info p .p_online {
-  color: var(--texto);
-  font: normal 1.3rem Varela Round, sans-serif;
-  animation: move linear 2000ms infinite;
-}
-
-.info span {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
-
-.info .img {
-  height: 65px;
-}
-
-.info a img {
-  height: 65px;
-}
 
 .camera {
   display: flex;
@@ -592,14 +582,22 @@ body {
   width: 100%;
 }
 
-/* aqui voy  aqui voy  aqui voy 
- aqui voy  aqui voy  aqui voy 
-  aqui voy 
-   aqui voy 
-    aqui voy 
-     aqui voy 
-      aqui voy 
-       aqui voy */
+/* 
+
+
+
+
+
+
+
+AQUI SE DIVIDE EL CHAT DEL ASIDE
+
+
+
+
+
+
+*/
 .chatbox {
   height: 100vh;
   width: 60vw;
@@ -1202,7 +1200,7 @@ body {
   height: 100%;
   color: red;
 
-  font-size: 30px;
+  font-size: 1.9vw;
 }
 
 .info-container3 .template_container .template_text_container {
@@ -1304,7 +1302,7 @@ body {
   padding-block: 20px;
   text-align: center;
   color: rgba(255, 255, 255, 0.73);
-  font-size: 35px;
+  font-size: 2vw;
   font-family: "Advent Pro", sans-serif;
   background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid #ffffff46;
@@ -1424,4 +1422,32 @@ body {
 
 .fondoo{
   fill: var(--bgChat);
+}
+
+@media only screen and (max-width: 1290px) {
+  .info .lorem {
+    font-size: 25px;
+  }
+  .info-container3 .template_container .template_text_container{
+    line-height: normal;
+    
+  }
+
+  .info-container3 .template_container{
+    height: auto;
+    padding: 15px;
+  }
+  .newLabel{
+  }
+}
+
+@media only screen and (max-width: 1062px) {
+  .info .lorem {
+    font-size: 20px;  }
+}
+
+@media only screen and (max-width: 890px) {
+  #theaside  {
+    display: none;
+  }
 }
